@@ -1,0 +1,9 @@
+import socket               
+s = socket.socket()         
+port = 12345               
+s.connect(('192.168.225.166', port))
+input_string = input("Enter data you want to send->")
+s.sendall(bytes(input_string,'utf-8'))
+print("Reversed:",s.recv(1024).decode())
+print("Capitalised:",s.recv(1024).decode())
+s.close()
